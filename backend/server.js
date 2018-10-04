@@ -7,7 +7,7 @@ const app = express();
 const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
-mongoose.connect('mongodb://[server]/issues');
+mongoose.connect('mongodb://localhost:27017/issues', {useNewUrlParser: true});
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('MongoDB database connection established successfully!');

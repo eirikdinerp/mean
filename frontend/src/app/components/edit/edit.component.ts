@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IssueService } from '../../issue.service';
 
 @Component({
   selector: 'app-edit',
@@ -6,10 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
+  constructor(private issueService: IssueService) {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

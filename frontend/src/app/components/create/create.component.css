@@ -1,0 +1,18 @@
+.create-form {
+  min-width: 150px;
+  width: 100%;
+  display: flex;
+}
+
+.field-full-width {
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin: 8px;
+}

@@ -1,0 +1,12 @@
+
+### Post an issue
+POST http://localhost:4000/issues/add
+content-type: application/json
+
+< ./test-issue.json
+
+### Get all issues
+GET http://localhost:4000/issues
+
+### Get one issue by id
+GET http://localhost:4000/issues/1

@@ -1,19 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes} from '@angular/router';
-import { MatToolbarModule } from '@angular/material';
+import { RouterModule, Routes } from '@angular/router';
+import {
+  MatToolbarModule,
+  MatCardModule,
+  MatTableModule,
+  MatButtonModule,
+  MatInputModule,
+  MatOptionModule,
+  MatSelectModule,
+  MatDividerModule
+} from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IssueService } from './issue.service';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'create', component: CreateComponent },
   { path: 'edit/:id', component: EditComponent },
   { path: 'list', component: ListComponent },
-  { path: '', redirectTo: '/list', pathMatch: 'full'}
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/list', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -21,15 +36,27 @@ const routes: Routes = [
     AppComponent,
     ListComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    MatToolbarModule
+    ReactiveFormsModule,
+    FormsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatTableModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatDividerModule
   ],
-  providers: [],
+  providers: [IssueService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
