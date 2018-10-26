@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import {
   MatToolbarModule,
   MatCardModule,
@@ -9,9 +8,12 @@ import {
   MatInputModule,
   MatOptionModule,
   MatSelectModule,
-  MatDividerModule
+  MatDividerModule,
+  MatIconModule
 } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
@@ -20,16 +22,11 @@ import { EditComponent } from './components/edit/edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IssueService } from './issue.service';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
-const routes: Routes = [
-  { path: 'create', component: CreateComponent },
-  { path: 'edit/:id', component: EditComponent },
-  { path: 'list', component: ListComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/list', pathMatch: 'full' }
-];
+import { ProfileComponent } from './components/profile/profile.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +34,14 @@ const routes: Routes = [
     ListComponent,
     CreateComponent,
     EditComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
@@ -54,7 +53,9 @@ const routes: Routes = [
     MatInputModule,
     MatOptionModule,
     MatSelectModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule,
+    AppRoutingModule
   ],
   providers: [IssueService],
   bootstrap: [AppComponent]
