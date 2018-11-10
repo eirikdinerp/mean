@@ -1,11 +1,11 @@
 <mat-toolbar>
-  <span>Eirik's MEAN Stack Sample Application</span>
-  <span class="spacer"></span>
-  <button mat-button routerLink="/register" routerLinkActive="active">Register</button>
-  <button mat-button routerLink="/login" routerLinkActive="active">Sign in</button>
-  <button mat-button routerLink="/profile" routerLinkActive="active">Profile</button>
-  <button mat-button routerLink="/list" routerLinkActive="active">Issues</button>
+  <span>Eirik's MEAN Stack Sample Application</span> <span class="spacer"></span>
+  <button *ngIf="!auth.isLoggedIn()" mat-button routerLink="/register" routerLinkActive="active">Register</button>
+  <button *ngIf="!auth.isLoggedIn()" mat-button routerLink="/login" routerLinkActive="active">Sign in</button>
+  <button *ngIf="auth.isLoggedIn()" mat-button routerLink="/profile" routerLinkActive="active">
+    {{ auth.getUser()?.name }}
+  </button>
+  <button *ngIf="auth.isLoggedIn()" mat-button routerLink="/list" routerLinkActive="active">Issues</button>
+  <button *ngIf="auth.isLoggedIn()" mat-button (click)="auth.logout()">Logout</button>
 </mat-toolbar>
-<div>
-  <router-outlet></router-outlet>
-</div>
+<div><router-outlet></router-outlet></div>

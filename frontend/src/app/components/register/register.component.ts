@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenPayload } from '../../model/tokens';
+import { AuthenticationService } from '../../services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  credentials: TokenPayload = {
+    email: '',
+    name: '',
+    password: ''
+  };
 
-  constructor() { }
+  constructor(private auth: AuthenticationService, private router: Router) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  register() {
+    this.auth.register(this.credentials).subscribe(
+      () => {
+        this.router.navigateByUrl('/profile');
+      },
+      err => {
+        console.error(err);
+      }
+    );
   }
-
 }

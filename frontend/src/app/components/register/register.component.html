@@ -1,16 +1,26 @@
+<!--
+  <div class="container">
+    <h1>Register</h1>
+    <mat-form-field> <input type="text" matInput placeholder="Full name" [(ngModel)]="fullName" /> </mat-form-field>
+    <mat-form-field> <input type="email" matInput placeholder="Email" [(ngModel)]="email" /> </mat-form-field>
+
+    <mat-form-field> <input type="password" matInput placeholder="Password" [(ngModel)]="password" /> </mat-form-field>
+
+    <button mat-raised-button (click)="registerClicked()">Register</button>
+  </div>
+-->
 <div class="container">
-  <h1>Register</h1>
-  <mat-form-field>
-    <input type="text" matInput placeholder="Full name">
-  </mat-form-field>
-  <mat-form-field>
-    <input type="email" matInput placeholder="Email">
-  </mat-form-field>
-
-  <mat-form-field>
-    <input type="password" matInput placeholder="Password">
-  </mat-form-field>
-
-  <button mat-raised-button>Register</button>
-
+  <form (submit)="register()" class="container">
+    <h1>Register</h1>
+    <mat-form-field>
+      <input matInput type="text" name="name" placeholder="Enter your name" [(ngModel)]="credentials.name" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="email" name="email" placeholder="Enter email" [(ngModel)]="credentials.email" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" name="password" placeholder="Password" [(ngModel)]="credentials.password" />
+    </mat-form-field>
+    <button type="submit" mat-raised-button>Register!</button>
+  </form>
 </div>

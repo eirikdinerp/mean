@@ -27,6 +27,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthenticationService } from './services/authentication.service';
+import { AuthGuardService } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,7 @@ import { HomeComponent } from './components/home/home.component';
     MatIconModule,
     AppRoutingModule
   ],
-  providers: [IssueService],
+  providers: [IssueService, AuthenticationService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

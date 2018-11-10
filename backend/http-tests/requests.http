@@ -10,3 +10,13 @@ GET http://localhost:4000/issues
 
 ### Get one issue by id
 GET http://localhost:4000/issues/1
+
+
+### Register user
+POST http://localhost:4000/register
+content-type: application/json
+
+< ./test-registration.json
+
+### Get profile 
+GET http://localhost:4000/profile

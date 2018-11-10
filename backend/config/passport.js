@@ -20,7 +20,7 @@ passport.use(
           });
         }
         // Return if password is wrong
-        if (!user.validPassword(password)) {
+        if (!user.validatePassword(password)) {
           return done(null, false, {
             message: 'Password is wrong'
           });
