@@ -8,6 +8,8 @@ https://www.sitepoint.com/user-authentication-mean-stack/
 
 https://medium.freecodecamp.org/learn-how-to-handle-authentication-with-node-using-passport-js-4a56ed18e81e
 
+https://medium.com/codingthesmartway-com-blog/angular-6-mean-stack-crash-course-part-3-connecting-front-end-to-back-end-760e26e2c74d
+
 ## Backend
 
 nodejs and express
